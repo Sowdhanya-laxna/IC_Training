@@ -1,0 +1,39 @@
+package ARRAY;
+
+import java.util.*;
+
+public class Slidingwindow {
+	 public static void main(String[]args) {
+			Scanner s=new Scanner(System.in);
+			int n=s.nextInt();
+			int [] arr=new int[n];
+			for(int i=0;i<n;i++) {
+				arr[i]=s.nextInt();
+			}
+	
+			        int k = s.nextInt();
+
+			        int w = 0;
+
+			        for (int i = 0; i < k; i++) {
+			            w += arr[i];
+			        }
+
+			        int maxSum = w;
+
+			        for (int i = k; i < n; i++) {
+
+			            w = w - arr[i - k] + arr[i];
+
+			            if (w > maxSum) {
+			                maxSum = w;
+			            }
+			        }
+
+			        System.out.println("Max Sum: " + maxSum);
+			    }
+			
+
+}
+
+
