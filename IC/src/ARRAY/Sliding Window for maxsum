@@ -28,6 +28,8 @@ public class Slidingwindow {
 			            if (w > maxSum) {
 			                maxSum = w;
 			            }
+			            //instead of if we can use
+			            //maxSum=Math.max(maxSum,w);
 			        }
 
 			        System.out.println("Max Sum: " + maxSum);
@@ -35,5 +37,4 @@ public class Slidingwindow {
 			
 
 }
-
 
