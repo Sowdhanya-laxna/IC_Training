@@ -1,0 +1,36 @@
+package ARRAY;
+
+import java.util.*;
+
+public class Equlibirium {
+    public static void main(String[]args) {
+	Scanner s=new Scanner(System.in);
+	int n=s.nextInt();
+	int [] arr=new int[n];
+	for(int i=0;i<n;i++) {
+		arr[i]=s.nextInt();
+	}
+	for(int i=0;i<arr.length;i++) {
+		 int leftSum = 0;
+         int rightSum = 0;
+
+         for (int j = 0; j < i; j++) {
+             leftSum += arr[j];
+         }
+
+         for (int j = i + 1; j < arr.length; j++) {
+             rightSum += arr[j];
+         }
+
+         if (leftSum == rightSum) {
+             System.out.println("Equilibrium "+arr[i]);
+             System.out.println("Index: " + i);
+             return;
+         }
+     }
+
+     System.out.println("No equlibrium ");
+
+	}
+}
+
