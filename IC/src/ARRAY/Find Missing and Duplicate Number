@@ -1,0 +1,30 @@
+package ARRAY;
+import java.util.*;
+public class Missingduplicate {
+		    public static void main(String[] args) {
+		        Scanner s = new Scanner(System.in);
+		        System.out.print("Enter the size: ");
+		        int n = s.nextInt();
+		        int[] arr = new int[n];
+		        int sum = 0;
+		        System.out.println("Enter the elements:");
+		        for (int i = 0; i < n; i++) {
+		            arr[i] = s.nextInt();
+		            sum += arr[i];
+		        }
+		        int expected = n * (n + 1) / 2;
+		        int duplicate = -1;
+		        boolean[] seen = new boolean[n + 1];
+
+		        for (int i = 0; i < n; i++) {
+		            if (seen[arr[i]]) {
+		                duplicate = arr[i];
+		            }
+		            seen[arr[i]] = true;
+		        }
+		        int missing = expected - (sum - duplicate);
+
+		        System.out.println("Duplicate Number: " + duplicate);
+		        System.out.println("Missing Number : " + missing);
+		    }
+		}
