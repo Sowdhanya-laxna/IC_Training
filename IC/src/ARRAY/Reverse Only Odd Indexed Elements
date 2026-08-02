@@ -1,0 +1,36 @@
+package ARRAY;
+
+import java.util.Scanner;
+
+public class Revoddindex {
+
+	public static void main(String[] args) {
+		 Scanner s = new Scanner(System.in);
+
+	        int n = s.nextInt();
+	        int[] arr = new int[n];
+
+	        for (int i = 0; i < n; i++) {
+	            arr[i] = s.nextInt();
+	        }
+
+	        int left = 1;
+	        int right = (n % 2 == 0) ? n - 1 : n - 2;
+
+	        while (left < right) {
+	            int temp = arr[left];
+	            arr[left] = arr[right];
+	            arr[right] = temp;
+
+	            left += 2;
+	            right -= 2;
+	        }
+
+	        System.out.print("Array after reversing only even indexed elements: ");
+	        for (int i = 0; i < n; i++) {
+	            System.out.print(arr[i] + " ");
+	        }
+
+	}
+
+}
